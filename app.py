@@ -3,7 +3,7 @@ import requests
 
 app = Flask(__name__)
 
-API_BASE_URL = "https://my-json-server.typicode.com/GITHUB_USERNAME/REPO_NAME"
+API_BASE_URL = "https://my-json-server.typicode.com/MichaelKaethoven/api_opdracht_4"
 
 
 # ---------------------------------------------------------------------------
