@@ -1,13 +1,37 @@
 {
 	"countries": [
-		{ "id": 1, "name": "Italië" },
-		{ "id": 2, "name": "Spanje" },
-		{ "id": 3, "name": "Duitsland" },
-		{ "id": 4, "name": "Moldavië" },
-		{ "id": 5, "name": "Oostenrijk" },
-		{ "id": 6, "name": "Frankrijk" },
-		{ "id": 7, "name": "Zuid-Afrika" },
-		{ "id": 8, "name": "Chili" }
+		{
+			"id": 1,
+			"name": "Italië"
+		},
+		{
+			"id": 2,
+			"name": "Spanje"
+		},
+		{
+			"id": 3,
+			"name": "Duitsland"
+		},
+		{
+			"id": 4,
+			"name": "Moldavië"
+		},
+		{
+			"id": 5,
+			"name": "Oostenrijk"
+		},
+		{
+			"id": 6,
+			"name": "Frankrijk"
+		},
+		{
+			"id": 7,
+			"name": "Zuid-Afrika"
+		},
+		{
+			"id": 8,
+			"name": "Chili"
+		}
 	],
 	"wines": [
 		{
@@ -19,10 +43,8 @@
 			"vintage": 2024,
 			"priceGlass": 8,
 			"priceBottle": 39,
-			"buyPrice": null,
 			"stockQty": 6,
-			"byGlass": true,
-			"tags": "dry; body=medium; acidity=medium_high; tannin=none; oak=none; profile=pear,white_peach,apple,floral,almond_finish"
+			"byGlass": true
 		},
 		{
 			"name": "Dominio Espinal Rosato - Bodegas Castaño",
@@ -33,10 +55,8 @@
 			"vintage": 2024,
 			"priceGlass": 6,
 			"priceBottle": 32,
-			"buyPrice": null,
 			"stockQty": 6,
-			"byGlass": true,
-			"tags": "dry; body=light; acidity=medium_high; tannin=low; oak=none; profile=strawberry,raspberry,juicy,fresh_finish"
+			"byGlass": true
 		},
 		{
 			"name": "Zolla Rosato - Vignetti del Salento",
@@ -47,10 +67,8 @@
 			"vintage": 2024,
 			"priceGlass": 8,
 			"priceBottle": 40,
-			"buyPrice": null,
 			"stockQty": 6,
-			"byGlass": true,
-			"tags": "dry; body=light_medium; acidity=high; tannin=low; oak=none; profile=red_summer_fruit,elegant,soft_finish"
+			"byGlass": true
 		},
 		{
 			"name": "St. Laurent - Ellermann-Spiegel",
@@ -61,10 +79,8 @@
 			"vintage": 2021,
 			"priceGlass": 8,
 			"priceBottle": 39,
-			"buyPrice": null,
 			"stockQty": 6,
-			"byGlass": true,
-			"tags": "dry; body=medium; acidity=medium_high; tannin=medium_low; oak=subtle; profile=cherry,blueberry,violet,spice,velvety"
+			"byGlass": true
 		},
 		{
 			"name": "Weisser - Weingut Hemer",
@@ -75,10 +91,8 @@
 			"vintage": 2021,
 			"priceGlass": null,
 			"priceBottle": 38,
-			"buyPrice": null,
 			"stockQty": 6,
-			"byGlass": false,
-			"tags": "dry; body=light; acidity=high; tannin=none; oak=none; profile=minerality,citrus,complex,balanced"
+			"byGlass": false
 		},
 		{
 			"name": "Vintage - Radacini",
@@ -89,10 +103,8 @@
 			"vintage": 2022,
 			"priceGlass": null,
 			"priceBottle": 40,
-			"buyPrice": null,
 			"stockQty": 6,
-			"byGlass": false,
-			"tags": "dry; body=full; acidity=medium; tannin=none; oak=high; profile=buttery,oaked,rich,firm_finish"
+			"byGlass": false
 		},
 		{
 			"name": "Moosburgerin - Weingut Felsner",
@@ -103,10 +115,8 @@
 			"vintage": 2023,
 			"priceGlass": null,
 			"priceBottle": 44,
-			"buyPrice": null,
 			"stockQty": 6,
-			"byGlass": false,
-			"tags": "dry; body=light_medium; acidity=high; tannin=none; oak=none; profile=fresh,light_spice,crisp"
+			"byGlass": false
 		},
 		{
 			"name": "Gavi - Tenuta San Pietro",
@@ -117,10 +127,8 @@
 			"vintage": 2023,
 			"priceGlass": null,
 			"priceBottle": 44,
-			"buyPrice": null,
 			"stockQty": 6,
-			"byGlass": false,
-			"tags": "dry; body=light_medium; acidity=medium_high; tannin=none; oak=none; profile=soft,fine,dry,delicate"
+			"byGlass": false
 		},
 		{
 			"name": "Pouilly-Fuissé - Domaine Gilles Noblet",
@@ -131,10 +139,8 @@
 			"vintage": 2023,
 			"priceGlass": null,
 			"priceBottle": 64,
-			"buyPrice": null,
 			"stockQty": 6,
-			"byGlass": false,
-			"tags": "dry; body=full; acidity=medium_high; tannin=none; oak=medium; profile=mineral,cinnamon,confited_fruit,intense,long_finish"
+			"byGlass": false
 		},
 		{
 			"name": "Signature - Spier",
@@ -145,10 +151,8 @@
 			"vintage": 2024,
 			"priceGlass": null,
 			"priceBottle": 40,
-			"buyPrice": null,
 			"stockQty": 6,
-			"byGlass": false,
-			"tags": "dry; body=medium; acidity=high; tannin=none; oak=none; profile=guava,pear,apple,fresh,long_finish"
+			"byGlass": false
 		},
 		{
 			"name": "Rioja Blanco Noralba - Castillo de Mendoza",
@@ -159,10 +163,8 @@
 			"vintage": 2024,
 			"priceGlass": null,
 			"priceBottle": 44,
-			"buyPrice": null,
 			"stockQty": 6,
-			"byGlass": false,
-			"tags": "dry; body=medium; acidity=medium; tannin=none; oak=none; profile=refined,structured,characterful"
+			"byGlass": false
 		},
 		{
 			"name": "Pouilly-Fumé - Domaine Tinel & Blondelet",
@@ -173,10 +175,8 @@
 			"vintage": 2023,
 			"priceGlass": null,
 			"priceBottle": 52,
-			"buyPrice": null,
 			"stockQty": 6,
-			"byGlass": false,
-			"tags": "dry; body=light_medium; acidity=high; tannin=none; oak=none; profile=citrus,smoky,mineral,crisp_finish"
+			"byGlass": false
 		},
 		{
 			"name": "Meursault 'Les Narvaux' - Jean Fery",
@@ -187,10 +187,8 @@
 			"vintage": 2023,
 			"priceGlass": null,
 			"priceBottle": 130,
-			"buyPrice": null,
 			"stockQty": 6,
-			"byGlass": false,
-			"tags": "dry; body=full; acidity=medium; tannin=none; oak=high; profile=ripe_fruit,almond,butter,creamy,complex"
+			"byGlass": false
 		},
 		{
 			"name": "Rioja Vitaran Crianza - Castillo De Mendoza",
@@ -201,12 +199,21 @@
 			"vintage": 2020,
 			"priceGlass": null,
 			"priceBottle": 40,
-			"buyPrice": null,
 			"stockQty": 6,
-			"byGlass": false,
-			"tags": "dry; body=medium; acidity=medium; tannin=medium; oak=medium; profile=terroir,spice,balanced; aging=12m_oak"
+			"byGlass": false
 		},
-
+		{
+			"name": "Erial - Bodegas Epifanio Rivera",
+			"grapes": "Tempranillo",
+			"region": "Ribera del Duero",
+			"countryId": 2,
+			"style": "RED",
+			"vintage": 2023,
+			"priceGlass": null,
+			"priceBottle": 49,
+			"stockQty": 6,
+			"byGlass": false
+		},
 		{
 			"name": "Saint-Emilion - Château Franc Lartigue",
 			"grapes": "Cabernet Sauvignon, Merlot, Cabernet Franc, Petit Verdot",
@@ -216,10 +223,8 @@
 			"vintage": 2022,
 			"priceGlass": null,
 			"priceBottle": 56,
-			"buyPrice": null,
 			"stockQty": 6,
-			"byGlass": false,
-			"tags": "dry; body=full; acidity=medium; tannin=high; oak=medium_high; profile=structured,classic_bordeaux; aging=12m_oak"
+			"byGlass": false
 		},
 		{
 			"name": "Lalande Pomerol - Château la Commanderie",
@@ -230,10 +235,8 @@
 			"vintage": 2023,
 			"priceGlass": null,
 			"priceBottle": 54,
-			"buyPrice": null,
 			"stockQty": 6,
-			"byGlass": false,
-			"tags": "dry; body=full; acidity=medium; tannin=medium; oak=medium_high; profile=plush,velvety,merlot_power; aging=12-18m_oak"
+			"byGlass": false
 		},
 		{
 			"name": "Maripose Carménère Gran Riserva - Viña Marty",
@@ -244,10 +247,8 @@
 			"vintage": 2019,
 			"priceGlass": null,
 			"priceBottle": 48,
-			"buyPrice": null,
 			"stockQty": 6,
-			"byGlass": false,
-			"tags": "dry; body=full; acidity=medium; tannin=medium; oak=high; profile=sappy,elegant,velvety,structured; aging=12-14m_oak"
+			"byGlass": false
 		},
 		{
 			"name": "Primitivo Di Manduria 'Zolla' - Vignetti del Salento",
@@ -258,10 +259,8 @@
 			"vintage": 2022,
 			"priceGlass": null,
 			"priceBottle": 46,
-			"buyPrice": null,
 			"stockQty": 6,
-			"byGlass": false,
-			"tags": "dry; body=full; acidity=medium_low; tannin=medium; oak=medium; profile=ripe_fruit,intense,plush; aging=6-8m_oak"
+			"byGlass": false
 		},
 		{
 			"name": "Chianti Montalbano Riserva - Fattoria Betti",
@@ -272,10 +271,8 @@
 			"vintage": 2021,
 			"priceGlass": null,
 			"priceBottle": 48,
-			"buyPrice": null,
 			"stockQty": 6,
-			"byGlass": false,
-			"tags": "dry; body=medium_full; acidity=high; tannin=high; oak=medium_high; profile=blackberry,violet,spice,structured; aging=12-18m_oak"
+			"byGlass": false
 		},
 		{
 			"name": "Morellino di Scansano Riserva - Morellino Scansano",
@@ -286,10 +283,8 @@
 			"vintage": 2020,
 			"priceGlass": null,
 			"priceBottle": 54,
-			"buyPrice": null,
 			"stockQty": 6,
-			"byGlass": false,
-			"tags": "dry; body=full; acidity=medium_high; tannin=medium_high; oak=medium; profile=concentrated,elegant,round_tannins,long_finish; aging=12m_oak"
+			"byGlass": false
 		},
 		{
 			"name": "Barolo - Ciabot Berton",
@@ -300,10 +295,8 @@
 			"vintage": 2019,
 			"priceGlass": null,
 			"priceBottle": 90,
-			"buyPrice": null,
 			"stockQty": 6,
-			"byGlass": false,
-			"tags": "dry; body=full; acidity=high; tannin=high; oak=medium_high; profile=powerful,refined,structured,long_finish; aging=18m_oak"
+			"byGlass": false
 		}
 	]
 }
