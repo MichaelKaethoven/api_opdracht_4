@@ -5,7 +5,7 @@ Run with: python fetch_data.py
 
 import requests
 
-API_BASE_URL = "https://my-json-server.typicode.com/GITHUB_USERNAME/REPO_NAME"
+API_BASE_URL = "https://my-json-server.typicode.com/MichaelKaethoven/"
 
 
 def fetch_wines():
