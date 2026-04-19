@@ -2,16 +2,16 @@
 {% block title %}{{ wine.name }}{% endblock %}
 
 {% block content %}
-<div class="detail-page">
+<article class="detail-page">
 
   <!-- Back button -->
   <a href="{{ url_for('wines_list') }}" class="back-link">
     &larr; Terug naar wijnenkaart
   </a>
 
-  <!-- Hero header -->
-  <div class="detail-header">
-    <div class="detail-header-meta">
+  <!-- header -->
+  <header class="detail-header">
+    <p class="detail-header-meta">
       <span class="style-badge style-badge--{{ wine.style | lower }} style-badge--large">
         {% if wine.style == 'WHITE' %}Wit
         {% elif wine.style == 'ROSE' %}Rosé
@@ -21,17 +21,17 @@
       {% if wine.byGlass %}
         <span class="by-glass-badge by-glass-badge--large">Op glas beschikbaar</span>
       {% endif %}
-    </div>
+    </p>
     <h1 class="detail-title">{{ wine.name }}</h1>
     <p class="detail-subtitle">{{ wine.vintage }} &middot; {{ wine.region }} &middot; {{ country_map.get(wine.countryId, '?') }}</p>
-  </div>
+  </header>
 
-  <div class="detail-body">
+  <main class="detail-body">
 
     <!-- Left: info -->
     <section class="detail-info">
 
-      <div class="info-card">
+      <article class="info-card">
         <h2 class="info-card-title">Wijninformatie</h2>
         <dl class="info-list">
           <div class="info-row">
@@ -72,33 +72,33 @@
           </div>
           {% endif %}
         </dl>
-      </div>
+      </article>
 
       <!-- Prices -->
-      <div class="info-card">
+      <article class="info-card">
         <h2 class="info-card-title">Prijzen</h2>
-        <div class="price-list">
+        <ul class="price-list">
           {% if wine.byGlass and wine.priceGlass %}
-          <div class="price-display">
+          <li class="price-display">
             <span class="price-display-label">Per glas</span>
             <span class="price-display-value">€{{ "%.2f"|format(wine.priceGlass) }}</span>
-          </div>
+          </li>
           {% endif %}
-          <div class="price-display">
+          <li class="price-display">
             <span class="price-display-label">Per fles</span>
             <span class="price-display-value price-display-value--main">€{{ "%.2f"|format(wine.priceBottle) }}</span>
-          </div>
+          </li>
           {% if not wine.byGlass %}
-          <p class="not-by-glass">Niet beschikbaar per glas</p>
+          <li class="not-by-glass">Niet beschikbaar per glas</li>
           {% endif %}
-        </div>
-      </div>
+        </ul>
+      </article>
 
     </section>
 
     <!-- Right: sensory profile -->
     <section class="detail-profile">
-      <div class="info-card">
+      <article class="info-card">
         <h2 class="info-card-title">Smaakprofiel</h2>
 
         {% set indicators = [
@@ -110,48 +110,52 @@
 
         {% for key, label, scale in indicators %}
           {% if tags.get(key) and tags[key] != 'none' %}
-          <div class="profile-indicator">
-            <div class="profile-indicator-header">
+          {% set val = tags[key] %}
+          {% set idx = namespace(n=0) %}
+          {% for level in scale %}{% if level == val %}{% set idx.n = loop.index %}{% endif %}{% endfor %}
+          {% set pct = [((idx.n) / scale|length * 100) | round | int, 15] | max %}
+          <figure class="profile-indicator">
+            <figcaption class="profile-indicator-header">
               <span class="profile-indicator-label">{{ label }}</span>
-              <span class="profile-indicator-value">{{ tags[key] | title }}</span>
-            </div>
-            <div class="profile-bar-track">
-              {% set val = tags[key] %}
-              {% set idx = namespace(n=0) %}
-              {% for level in scale %}
-                {% if level == val %}{% set idx.n = loop.index %}{% endif %}
-              {% endfor %}
-              {% set pct = ((idx.n) / scale|length * 100) | round | int %}
-              <div class="profile-bar-fill" style="width: {{ [pct, 15]|max }}%"></div>
-            </div>
-          </div>
+              <span class="profile-indicator-value">{{ val | title }}</span>
+            </figcaption>
+            <span class="profile-bar-track">
+              <span class="profile-bar-fill" data-pct="{{ pct }}"></span>
+            </span>
+          </figure>
           {% elif tags.get(key) == 'none' %}
-          <div class="profile-indicator">
-            <div class="profile-indicator-header">
+          <figure class="profile-indicator">
+            <figcaption class="profile-indicator-header">
               <span class="profile-indicator-label">{{ label }}</span>
               <span class="profile-indicator-value profile-none">Geen</span>
-            </div>
-            <div class="profile-bar-track">
-              <div class="profile-bar-fill" style="width: 0%"></div>
-            </div>
-          </div>
+            </figcaption>
+            <span class="profile-bar-track">
+              <span class="profile-bar-fill" data-pct="0"></span>
+            </span>
+          </figure>
           {% endif %}
         {% endfor %}
 
         {% if tags.get('profile') %}
-        <div class="aroma-section">
+        <aside class="aroma-section">
           <h3 class="aroma-title">Aroma &amp; smaak</h3>
-          <div class="aroma-tags">
+          <ul class="aroma-tags">
             {% for aroma in tags.profile %}
-              <span class="aroma-tag">{{ aroma | replace('_', ' ') | title }}</span>
+              <li class="aroma-tag">{{ aroma | replace('_', ' ') | title }}</li>
             {% endfor %}
-          </div>
-        </div>
+          </ul>
+        </aside>
         {% endif %}
-      </div>
+      </article>
     </section>
 
-  </div><!-- /detail-body -->
+  </main>
 
-</div><!-- /detail-page -->
+</article>
+
+<script>
+  document.querySelectorAll('.profile-bar-fill[data-pct]').forEach(el => {
+    el.style.width = el.dataset.pct + '%';
+  });
+</script>
 {% endblock %}

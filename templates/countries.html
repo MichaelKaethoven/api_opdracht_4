@@ -2,24 +2,24 @@
 {% block title %}Landen{% endblock %}
 
 {% block content %}
-<div class="page-header">
+<header class="page-header">
   <h1 class="page-title">Landen</h1>
   <p class="page-subtitle">Wijnen per herkomstland</p>
-</div>
+</header>
 
-<div class="countries-grid">
+<ul class="countries-grid">
   {% for country in countries %}
   {% set count = wine_counts.get(country.id, 0) %}
-  <a href="{{ url_for('wines_list', country=country.id) }}" class="country-card">
-    <div class="country-card-inner">
+  <li>
+    <a href="{{ url_for('wines_list', country=country.id) }}" class="country-card">
       <span class="country-icon">🌍</span>
       <h2 class="country-name">{{ country.name }}</h2>
       <p class="country-wine-count">
         {{ count }} wijn{% if count != 1 %}en{% endif %}
       </p>
       <span class="country-view-link">Bekijk wijnen &rarr;</span>
-    </div>
-  </a>
+    </a>
+  </li>
   {% endfor %}
-</div>
+</ul>
 {% endblock %}

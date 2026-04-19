@@ -2,16 +2,16 @@
 {% block title %}Wijnenkaart{% endblock %}
 
 {% block content %}
-<div class="page-header">
-  <h1 class="page-title">Wijnenkaart</h1>
+<header class="page-header">
+  <h1 class="page-title">Wijnkaart</h1>
   <p class="page-subtitle">Ontdek onze zorgvuldig geselecteerde wijnen</p>
-</div>
+</header>
 
 <!-- Filter bar -->
 <section class="filter-bar">
   <div class="filter-group">
     <span class="filter-label">Stijl:</span>
-    <div class="filter-buttons">
+    <nav class="filter-buttons">
       <a
         href="{{ url_for('wines_list', country=country_filter if country_filter else None) }}"
         class="filter-btn{% if not style_filter %} active{% endif %}"
@@ -28,7 +28,7 @@
         href="{{ url_for('wines_list', style='RED', country=country_filter if country_filter else None) }}"
         class="filter-btn filter-btn--red{% if style_filter == 'RED' %} active{% endif %}"
       >Rood</a>
-    </div>
+    </nav>
   </div>
 
   <div class="filter-group">
@@ -58,68 +58,66 @@
 
 <!-- Wine grid -->
 {% if wines %}
-<div class="wine-grid">
+<ul class="wine-grid">
   {% for wine in wines %}
-  <article class="wine-card">
-    <a href="{{ url_for('wine_detail', wine_id=wine.id) }}" class="wine-card-link">
-      <div class="wine-card-header">
-        <span class="style-badge style-badge--{{ wine.style | lower }}">
-          {% if wine.style == 'WHITE' %}Wit
-          {% elif wine.style == 'ROSE' %}Rosé
-          {% elif wine.style == 'RED' %}Rood
-          {% else %}{{ wine.style }}{% endif %}
-        </span>
-        {% if wine.byGlass %}
-          <span class="by-glass-badge">Op glas</span>
-        {% endif %}
-      </div>
+  <li>
+    <article class="wine-card">
+      <a href="{{ url_for('wine_detail', wine_id=wine.id) }}" class="wine-card-link">
+        <header class="wine-card-header">
+          <span class="style-badge style-badge--{{ wine.style | lower }}">
+            {% if wine.style == 'WHITE' %}Wit
+            {% elif wine.style == 'ROSE' %}Rosé
+            {% elif wine.style == 'RED' %}Rood
+            {% else %}{{ wine.style }}{% endif %}
+          </span>
+          {% if wine.byGlass %}
+            <span class="by-glass-badge">Op glas</span>
+          {% endif %}
+        </header>
 
-      <h2 class="wine-name">{{ wine.name }}</h2>
+        <h2 class="wine-name">{{ wine.name }}</h2>
 
-      <div class="wine-meta">
-        <div class="wine-meta-item">
-          <span class="meta-icon">📅</span>
-          <span class="meta-label">Jaargang</span>
-          <span class="meta-value">{{ wine.vintage }}</span>
-        </div>
-        <div class="wine-meta-item">
-          <span class="meta-icon">📍</span>
-          <span class="meta-label">Regio</span>
-          <span class="meta-value">{{ wine.region }}</span>
-        </div>
-        <div class="wine-meta-item">
-          <span class="meta-icon">🌍</span>
-          <span class="meta-label">Land</span>
-          <span class="meta-value">{{ country_map.get(wine.countryId, '?') }}</span>
-        </div>
-        <div class="wine-meta-item">
-          <span class="meta-icon">🍇</span>
-          <span class="meta-label">Druif</span>
-          <span class="meta-value">{{ wine.grapes }}</span>
-        </div>
-      </div>
-
-      <div class="wine-prices">
-        {% if wine.byGlass and wine.priceGlass %}
-          <div class="price-item price-glass">
-            <span class="price-label">Per glas</span>
-            <span class="price-value">€{{ "%.2f"|format(wine.priceGlass) }}</span>
+        <dl class="wine-meta">
+          <div class="wine-meta-item">
+            <dt class="meta-label">Jaargang</dt>
+            <dd class="meta-value">{{ wine.vintage }}</dd>
           </div>
-        {% endif %}
-        <div class="price-item price-bottle">
-          <span class="price-label">Per fles</span>
-          <span class="price-value">€{{ "%.2f"|format(wine.priceBottle) }}</span>
-        </div>
-      </div>
-    </a>
-  </article>
+          <div class="wine-meta-item">
+            <dt class="meta-label">Regio</dt>
+            <dd class="meta-value">{{ wine.region }}</dd>
+          </div>
+          <div class="wine-meta-item">
+            <dt class="meta-label">Land</dt>
+            <dd class="meta-value">{{ country_map.get(wine.countryId, '?') }}</dd>
+          </div>
+          <div class="wine-meta-item">
+            <dt class="meta-label">Druif</dt>
+            <dd class="meta-value">{{ wine.grapes }}</dd>
+          </div>
+        </dl>
+
+        <footer class="wine-prices">
+          {% if wine.byGlass and wine.priceGlass %}
+            <p class="price-item price-glass">
+              <span class="price-label">Per glas</span>
+              <span class="price-value">€{{ "%.2f"|format(wine.priceGlass) }}</span>
+            </p>
+          {% endif %}
+          <p class="price-item price-bottle">
+            <span class="price-label">Per fles</span>
+            <span class="price-value">€{{ "%.2f"|format(wine.priceBottle) }}</span>
+          </p>
+        </footer>
+      </a>
+    </article>
+  </li>
   {% endfor %}
-</div>
+</ul>
 {% else %}
-<div class="empty-state">
+<section class="empty-state">
   <span class="empty-icon">🍾</span>
   <p>Geen wijnen gevonden voor de geselecteerde filters.</p>
   <a href="{{ url_for('wines_list') }}" class="btn-primary">Toon alle wijnen</a>
-</div>
+</section>
 {% endif %}
 {% endblock %}

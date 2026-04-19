@@ -1,3 +1,19 @@
+
+# =============================================================================
+# Bronnen
+# =============================================================================
+# - Canvas cursus: cursusmateriaal over REST API's, Flask en JSON-servers (31/03/2026)
+#
+# - Eigen project: HouseYourWine — een full-stack wijnbeheerapplicatie die ik
+#   zelf aan het ontwikkelen ben. De wijndata en algemene structuur van deze
+#   opdracht zijn gebaseerd op dat project.
+#
+# - my-json-server — gebruikt als nep-REST API voor de wijndata (31/03/2026)
+# 
+# - Claude Code (claude.ai) — gebruikt als AI-assistent bij de opmaak/stijl van
+#   de website en het parsen van de JSON-tagstructuur (31/03/2026)
+# =============================================================================
+
 from flask import Flask, render_template, request, redirect, url_for, abort
 import requests
 
@@ -136,19 +152,5 @@ def countries_list():
     )
 
 
-# ---------------------------------------------------------------------------
-# Error handlers
-# ---------------------------------------------------------------------------
-
-@app.errorhandler(404)
-def page_not_found(e):
-    return render_template("404.html"), 404
-
-
-@app.errorhandler(500)
-def server_error(e):
-    return render_template("500.html"), 500
-
-
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(host='0.0.0.0', port=5000)
